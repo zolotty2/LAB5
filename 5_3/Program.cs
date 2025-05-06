@@ -55,7 +55,10 @@ class Program
         {
             var users = db.Users.ToList();
             foreach (User user in users)
+            {
                 Console.WriteLine($"{user.Name} - {user.Company?.Name}");
+            }
+              
         }
         using (ApplicationContext db = new ApplicationContext())
         {
