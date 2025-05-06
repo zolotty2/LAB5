@@ -77,7 +77,7 @@ class Program
                 // Выводим информацию о компании и ее пользователях
                 Console.WriteLine($"Company: {company.Name}");
                 foreach (var u in company.Users)
-                    Console.WriteLine($":User  {u.Name}");
+                    Console.WriteLine($"User:  {u.Name}");
             }
         }
 
@@ -93,7 +93,7 @@ class Program
                 // Выводим информацию о компании и ее пользователях
                 Console.WriteLine($"Company: {company.Name}");
                 foreach (var u in company.Users)
-                    Console.WriteLine($":User  {u.Name}");
+                    Console.WriteLine($"User:  {u.Name}");
             }
         }
 
@@ -117,16 +117,16 @@ class Program
             {
                 // Загружаем пользователей, связанных с первой компанией
                 db.Users.Where(u => u.CompanyId == company1.Id).Load();
-                foreach (var u in company1.Users) Console.WriteLine($":User  {u.Name}");
+                foreach (var u in company1.Users) Console.WriteLine($"User:  {u.Name}");
                 Company? company2 = db.Companies.Find(2); // Находим вторую компанию
                 if (company2 != null)
                 {
                     // Загружаем пользователей, связанных со второй компанией
                     db.Users.Where(u => u.CompanyId == company2.Id).Load();
-                    foreach (var u in company2.Users) Console.WriteLine($":User   {u.Name}");
+                    foreach (var u in company2.Users) Console.WriteLine($"User:   {u.Name}");
                 }
                 // Получаем всех сотрудников из базы данных
-                foreach (var u in db.Users) Console.WriteLine($":User   {u.Name}");
+                foreach (var u in db.Users) Console.WriteLine($"User:   {u.Name}");
             }
         }
     }
